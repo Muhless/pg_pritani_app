@@ -17,7 +17,7 @@ class CustomBottomBar extends StatelessWidget {
       onTap: onTap,
       type: BottomNavigationBarType.shifting,
       backgroundColor: Colors.white,
-      selectedItemColor: Colors.green,
+      selectedItemColor: Colors.lightBlue,
       unselectedItemColor: Colors.grey,
       selectedFontSize: 14,
       unselectedFontSize: 12,
