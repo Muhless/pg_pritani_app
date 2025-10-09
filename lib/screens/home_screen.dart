@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pg_pritani/widgets/homescreen_banner.dart';
-import 'package:pg_pritani/widgets/profile_header.dart';
+import 'package:pg_pritani/widgets/banner_homescreen.dart';
+import 'package:pg_pritani/widgets/header_homescreen.dart';
+import 'package:pg_pritani/widgets/menu_homescreen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,12 +10,14 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20),
+          margin: EdgeInsets.all(20),
           child: Column(
             children: [
               ProfileHeader(),
               SizedBox(height: 30),
               HomescreenBanner(),
+              SizedBox(height: 30),
+              MenuHomescreen(),
             ],
           ),
         ),
