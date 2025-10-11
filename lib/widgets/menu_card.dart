@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pg_pritani/theme/app_colors.dart';
 
 class MenuCard extends StatelessWidget {
   final IconData icon;
@@ -28,14 +29,14 @@ class MenuCard extends StatelessWidget {
         height: cardSize,
         width: cardSize,
         decoration: BoxDecoration(
-          color: Colors.blue[50],
+          color: AppColors.secondary,
           borderRadius: BorderRadius.circular(16),
         ),
         padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: Colors.blue, size: iconSize),
+            Icon(icon, color: AppColors.background, size: iconSize),
             const SizedBox(height: 8),
             Text(
               label,

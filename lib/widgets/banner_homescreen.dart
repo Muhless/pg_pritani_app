@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pg_pritani/screens/transaction_screen.dart';
+import 'package:pg_pritani/theme/app_colors.dart';
 
 class HomescreenBanner extends StatelessWidget {
   const HomescreenBanner({super.key});
@@ -11,7 +12,7 @@ class HomescreenBanner extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Colors.lightBlue,
+        color: AppColors.secondary,
       ),
       child: Row(
         children: [
