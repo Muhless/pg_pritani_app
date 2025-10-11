@@ -7,18 +7,27 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    final horizontalPadding = screenWidth * 0.05;
+    final verticalSpacing = screenHeight * 0.03;
+
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.all(20),
-          child: Column(
-            children: [
-              ProfileHeader(),
-              SizedBox(height: 30),
-              HomescreenBanner(),
-              SizedBox(height: 30),
-              MenuHomescreen(),
-            ],
+        child: SingleChildScrollView(
+          child: Container(
+            margin: EdgeInsets.symmetric(horizontal: horizontalPadding),
+            child: Column(
+              children: [
+                ProfileHeader(),
+                SizedBox(height: verticalSpacing),
+                HomescreenBanner(),
+                SizedBox(height: verticalSpacing),
+                MenuHomescreen(),
+                SizedBox(height: verticalSpacing),
+              ],
+            ),
           ),
         ),
       ),

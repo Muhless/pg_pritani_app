@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pg_pritani/screens/contact_screen.dart';
+import 'package:pg_pritani/screens/history_screen.dart';
+import 'package:pg_pritani/screens/product/product_screen.dart';
+import 'package:pg_pritani/screens/transaction_screen.dart';
 import 'package:pg_pritani/widgets/menu_card.dart';
 
 class MenuHomescreen extends StatelessWidget {
@@ -7,19 +11,55 @@ class MenuHomescreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      crossAxisCount: 4,
+      crossAxisCount: 2,
       mainAxisSpacing: 16,
       crossAxisSpacing: 16,
       shrinkWrap: true,
       // childAspectRatio: 1.4,
       physics: NeverScrollableScrollPhysics(),
       children: [
-        MenuCard(icon: Icons.storefront, label: "Produk Kami"),
+        MenuCard(
+          icon: Icons.storefront,
+          label: "Produk Kami",
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProductScreen()),
+            );
+          },
+        ),
         // MenuCard(icon: Icons.attach_money, label: "Promo & Harga"),
-        MenuCard(icon: Icons.shopping_bag_outlined, label: "Pesanan Saya"),
-        MenuCard(icon: Icons.receipt_long, label: "Riwayat Transaksi"),
+        MenuCard(
+          icon: Icons.shopping_bag_outlined,
+          label: "Pesanan Saya",
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => TransactionScreen()),
+            );
+          },
+        ),
+        MenuCard(
+          icon: Icons.receipt_long,
+          label: "Riwayat Transaksi",
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HistoryScreen()),
+            );
+          },
+        ),
         // MenuCard(icon: Icons.local_shipping, label: "Lacak Pengiriman"),
-        MenuCard(icon: Icons.phone, label: "Hubungi Kami"),
+        MenuCard(
+          icon: Icons.phone,
+          label: "Hubungi Kami",
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ContactScreen()),
+            );
+          },
+        ),
       ],
     );
   }

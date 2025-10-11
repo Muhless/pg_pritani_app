@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pg_pritani/screens/product_screen.dart';
+import 'package:pg_pritani/screens/product/product_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
