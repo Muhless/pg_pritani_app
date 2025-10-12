@@ -11,11 +11,11 @@ class MenuHomescreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      crossAxisCount: 2,
-      mainAxisSpacing: 16,
+      crossAxisCount: 4,
+      mainAxisSpacing: 5,
       crossAxisSpacing: 16,
       shrinkWrap: true,
-      // childAspectRatio: 1.4,
+      childAspectRatio: 1.3,
       physics: NeverScrollableScrollPhysics(),
       children: [
         MenuCard(
@@ -28,7 +28,6 @@ class MenuHomescreen extends StatelessWidget {
             );
           },
         ),
-        // MenuCard(icon: Icons.attach_money, label: "Promo & Harga"),
         MenuCard(
           icon: Icons.shopping_bag_outlined,
           label: "Pesanan Saya",

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({super.key});
@@ -8,8 +9,7 @@ class ProfileHeader extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 50,
-          height: 50,
+          height: 50.h,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.lightBlue,
@@ -27,7 +27,7 @@ class ProfileHeader extends StatelessWidget {
           ),
         ),
 
-        const SizedBox(width: 12),
+        SizedBox(width: 12.h),
 
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pg_pritani/screens/home_screen.dart';
 import 'package:pg_pritani/screens/product/product_screen.dart';
+import 'package:pg_pritani/screens/product/rice_product_screen.dart';
 import 'package:pg_pritani/screens/profile_screen.dart';
 import 'package:pg_pritani/screens/transaction_screen.dart';
 import 'package:pg_pritani/widgets/custom_bottom_bar.dart';
@@ -17,21 +18,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final router = GoRouter(
-      initialLocation: '/home',
+      initialLocation: '/',
       routes: [
         ShellRoute(
           builder: (context, state, child) {
             return MainScaffold(child: child);
           },
           routes: [
+            GoRoute(path: '/', builder: (context, state) => const HomeScreen()),
             GoRoute(
-              path: '/home',
-              builder: (context, state) => const HomeScreen(),
-            ),
-            GoRoute(
-              path: '/search',
+              path: '/product',
               builder: (context, state) => const ProductScreen(),
             ),
+            GoRoute(
+              path: '/product/rice',
+              builder: (context, state) => const RiceProductScreen(),
+            ),
+
             GoRoute(
               path: '/transaction',
               builder: (context, state) => const TransactionScreen(),
@@ -67,7 +70,7 @@ class MainScaffold extends StatefulWidget {
 class _MainScaffoldState extends State<MainScaffold> {
   int _selectedIndex = 0;
 
-  final List<String> _routes = ['/home', '/search', '/transaction', '/profile'];
+  final List<String> _routes = ['/', '/product', '/transaction', '/profile'];
 
   void _onItemTapped(int index) {
     setState(() => _selectedIndex = index);

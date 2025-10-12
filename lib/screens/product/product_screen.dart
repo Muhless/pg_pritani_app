@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:pg_pritani/widgets/cards/category_product.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -7,40 +8,46 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final products = [
+      {
+        'id': '1',
+        'image': 'assets/images/farmer.png',
+        'title': "Beras",
+        'subtitle': 'Beras',
+      },
+      {
+        'id': '2',
+        'image': 'assets/images/oat.png',
+        'title': "Dedak",
+        'subtitle': 'Dedak Halus',
+      },
+      {
+        'id': '3',
+        'image': 'assets/images/oat.png',
+        'title': "Sekam",
+        'subtitle': 'sekampung xixixi',
+      },
+    ];
     return Scaffold(
-      appBar: AppBar(title: const Text("Produk")),
+      appBar: AppBar(title: const Text("Produk Kami"), centerTitle: true),
       body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 16.w),
-          child: Column(
-            children: [
-              CategoryProduct(
-                image: 'assets/images/oat.png',
-                title: 'Gandum',
-                subTitle: 'Gandum utuh dari petani',
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: ListView.separated(
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: products.length,
+            separatorBuilder: (_, __) => SizedBox(height: 10.h),
+            itemBuilder: (context, index) {
+              final p = products[index];
+              return CategoryProduct(
+                image: p['image']!,
+                title: p['title']!,
+                subTitle: p['subtitle']!,
                 onTap: () {
-                  Navigator.pushNamed(context, '/detail-produk');
+                  context.push('/detail-product/${p['id']}');
                 },
-              ),
-              SizedBox(height: 18.h),
-              CategoryProduct(
-                image: 'assets/images/beras-merah.png',
-                title: 'Beras Merah',
-                subTitle: 'Beras Merah asli dari petani',
-                onTap: () {
-                  Navigator.pushNamed(context, '/detail-produk');
-                },
-              ),
-              SizedBox(height: 18.h),
-              CategoryProduct(
-                image: 'assets/images/dedak-halus.png',
-                title: 'Beras Merah',
-                subTitle: 'Beras Merah asli dari petani',
-                onTap: () {
-                  Navigator.pushNamed(context, '/detail-produk');
-                },
-              ),
-            ],
+              );
+            },
           ),
         ),
       ),

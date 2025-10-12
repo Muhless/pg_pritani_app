@@ -19,55 +19,46 @@ class CategoryProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.circular(16.r),
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(20.h),
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 131, 156, 81),
+          borderRadius: BorderRadius.circular(16.r),
         ),
-        elevation: 2,
-        child: Container(
-          width: double.infinity,
-          padding: EdgeInsets.all(12.h),
-          decoration: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.circular(16.r),
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16.sp,
-                      ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 30.sp,
                     ),
-                    SizedBox(height: 4.h),
-                    Text(
-                      subTitle,
-                      style: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 14.sp,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                  Text(
+                    subTitle,
+                    style: TextStyle(color: Colors.grey[100], fontSize: 18.sp),
+                  ),
+                ],
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12.r),
-                child: Image.asset(
-                  image,
-                  width: 100.w,
-                  height: 100.h,
-                  fit: BoxFit.cover,
-                ),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12.r),
+              child: Image.asset(
+                image,
+                width: 100.w,
+                height: 100.h,
+                fit: BoxFit.cover,
               ),
-              SizedBox(width: 12.w),
-            ],
-          ),
+            ),
+            SizedBox(width: 12.w),
+          ],
         ),
       ),
     );

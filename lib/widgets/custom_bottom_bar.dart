@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pg_pritani/theme/app_colors.dart';
 
 class CustomBottomBar extends StatelessWidget {
   final int currentIndex;
@@ -17,7 +18,7 @@ class CustomBottomBar extends StatelessWidget {
       onTap: onTap,
       type: BottomNavigationBarType.shifting,
       backgroundColor: Colors.white,
-      selectedItemColor: Colors.lightBlue,
+      selectedItemColor: AppColors.secondary,
       unselectedItemColor: Colors.grey,
       selectedFontSize: 14,
       unselectedFontSize: 12,

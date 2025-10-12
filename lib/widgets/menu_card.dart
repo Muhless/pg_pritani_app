@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pg_pritani/theme/app_colors.dart';
 
 class MenuCard extends StatelessWidget {
@@ -15,36 +16,26 @@ class MenuCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ambil ukuran layar
-    final screenWidth = MediaQuery.of(context).size.width;
-
-    // tentukan ukuran card relatif terhadap layar
-    final cardSize = screenWidth * 0.38;
-    final iconSize = cardSize * 0.35;
-
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: BorderRadius.circular(16.r),
       child: Container(
-        height: cardSize,
-        width: cardSize,
         decoration: BoxDecoration(
-          color: AppColors.secondary,
-          borderRadius: BorderRadius.circular(16),
+          color: AppColors.accent,
+          borderRadius: BorderRadius.circular(16.r),
         ),
-        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: AppColors.background, size: iconSize),
-            const SizedBox(height: 8),
-            Text(
-              label,
-              style: const TextStyle(
-                fontWeight: FontWeight.w600,
-                color: Colors.black87,
-              ),
-            ),
+            Icon(icon, color: AppColors.background, size: 30.h),
+            // SizedBox(height: 3.h),
+            // Text(
+            //   label,
+            //   style: const TextStyle(
+            //     fontWeight: FontWeight.w600,
+            //     color: Colors.black87,
+            //   ),
+            // ),
           ],
         ),
       ),
