@@ -14,18 +14,21 @@ class ProductScreen extends StatelessWidget {
         'image': 'assets/images/farmer.png',
         'title': "Beras",
         'subtitle': 'Beras',
+        'route': '/category/rice',
       },
       {
         'id': '2',
         'image': 'assets/images/oat.png',
         'title': "Dedak",
         'subtitle': 'Dedak Halus',
+        'route': '/category/bran',
       },
       {
         'id': '3',
         'image': 'assets/images/oat.png',
         'title': "Sekam",
         'subtitle': 'sekampung xixixi',
+        'route': '/category/husk',
       },
     ];
     return Scaffold(
@@ -44,7 +47,7 @@ class ProductScreen extends StatelessWidget {
                 title: p['title']!,
                 subTitle: p['subtitle']!,
                 onTap: () {
-                  context.push('/detail-product/${p['id']}');
+                  context.push(p['route']!);
                 },
               );
             },
