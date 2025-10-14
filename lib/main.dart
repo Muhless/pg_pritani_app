@@ -8,6 +8,7 @@ import 'package:pg_pritani/screens/category/rice_screen.dart';
 import 'package:pg_pritani/screens/home_screen.dart';
 import 'package:pg_pritani/screens/profile_screen.dart';
 import 'package:pg_pritani/screens/transaction_screen.dart';
+import 'package:pg_pritani/theme/app_colors.dart';
 import 'package:pg_pritani/widgets/custom_bottom_bar.dart';
 
 void main() {
@@ -62,7 +63,17 @@ class MyApp extends StatelessWidget {
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         // ubah warna bg
-        // theme: ThemeData(scaffoldBackgroundColor: Colors.white),
+        theme: ThemeData(
+          scaffoldBackgroundColor: AppColors.background,
+          textTheme: const TextTheme(
+            bodyLarge: TextStyle(color: AppColors.text),
+            bodyMedium: TextStyle(color: AppColors.text),
+            bodySmall: TextStyle(color: AppColors.text),
+            titleLarge: TextStyle(color: AppColors.text),
+            titleMedium: TextStyle(color: AppColors.text),
+            titleSmall: TextStyle(color: AppColors.text),
+          ),
+        ),
         routerConfig: _router,
       ),
     );

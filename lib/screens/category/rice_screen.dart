@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pg_pritani/widgets/cards/rice_card.dart';
+import 'package:pg_pritani/theme/app_colors.dart';
+import 'package:pg_pritani/widgets/cards/product_card.dart';
 
 class RiceScreen extends StatelessWidget {
   const RiceScreen({super.key});
@@ -7,7 +8,10 @@ class RiceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Ini Halaman Beras')),
+      appBar: AppBar(
+        title: const Text('Beras'),
+        backgroundColor: AppColors.background,
+      ),
       body: Column(children: [RiceCard()]),
     );
   }

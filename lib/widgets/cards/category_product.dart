@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pg_pritani/theme/app_colors.dart';
 
 class CategoryProduct extends StatelessWidget {
   final String image;
@@ -21,9 +22,9 @@ class CategoryProduct extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.all(20.h),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
         decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 131, 156, 81),
+          color: AppColors.primary,
           borderRadius: BorderRadius.circular(16.r),
         ),
         child: Row(
@@ -52,12 +53,11 @@ class CategoryProduct extends StatelessWidget {
               borderRadius: BorderRadius.circular(12.r),
               child: Image.asset(
                 image,
-                width: 100.w,
+                width: 150.w,
                 height: 100.h,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
               ),
             ),
-            SizedBox(width: 12.w),
           ],
         ),
       ),

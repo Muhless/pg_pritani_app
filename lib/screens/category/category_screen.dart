@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pg_pritani/theme/app_colors.dart';
 import 'package:pg_pritani/widgets/cards/category_product.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -11,14 +12,14 @@ class ProductScreen extends StatelessWidget {
     final products = [
       {
         'id': '1',
-        'image': 'assets/images/farmer.png',
+        'image': 'assets/images/rice.png',
         'title': "Beras",
         'subtitle': 'Beras',
         'route': '/category/rice',
       },
       {
         'id': '2',
-        'image': 'assets/images/oat.png',
+        'image': 'assets/images/bran.png',
         'title': "Dedak",
         'subtitle': 'Dedak Halus',
         'route': '/category/bran',
@@ -32,7 +33,11 @@ class ProductScreen extends StatelessWidget {
       },
     ];
     return Scaffold(
-      appBar: AppBar(title: const Text("Produk Kami"), centerTitle: true),
+      appBar: AppBar(
+        title: const Text("Produk Kami"),
+        centerTitle: true,
+        backgroundColor: AppColors.background,
+      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
