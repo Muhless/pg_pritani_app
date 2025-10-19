@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pg_pritani/screens/contact_screen.dart';
 import 'package:pg_pritani/screens/history_screen.dart';
-import 'package:pg_pritani/screens/category/category_screen.dart';
+import 'package:pg_pritani/screens/product_screen.dart';
 import 'package:pg_pritani/screens/transaction_screen.dart';
 import 'package:pg_pritani/widgets/menu_card.dart';
 

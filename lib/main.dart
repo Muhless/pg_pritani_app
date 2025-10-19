@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pg_pritani/screens/category/bran_screen.dart';
-import 'package:pg_pritani/screens/category/category_screen.dart';
-import 'package:pg_pritani/screens/category/husk_screen.dart';
-import 'package:pg_pritani/screens/category/rice_screen.dart';
+import 'package:pg_pritani/screens/detail_product_screen.dart';
 import 'package:pg_pritani/screens/home_screen.dart';
+import 'package:pg_pritani/screens/product_screen.dart';
 import 'package:pg_pritani/screens/profile_screen.dart';
 import 'package:pg_pritani/screens/transaction_screen.dart';
 import 'package:pg_pritani/theme/app_colors.dart';
@@ -26,20 +24,12 @@ class MyApp extends StatelessWidget {
         routes: [
           GoRoute(path: '/', builder: (context, state) => const HomeScreen()),
           GoRoute(
-            path: '/category',
+            path: '/product',
             builder: (context, state) => const ProductScreen(),
           ),
           GoRoute(
-            path: '/category/rice',
-            builder: (context, state) => const RiceScreen(),
-          ),
-          GoRoute(
-            path: '/category/bran',
-            builder: (context, state) => const BranScreen(),
-          ),
-          GoRoute(
-            path: '/category/husk',
-            builder: (context, state) => const HuskScreen(),
+            path: '/product/detail',
+            builder: (context, state) => const DetailProductScreen(),
           ),
 
           GoRoute(
@@ -64,6 +54,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         // ubah warna bg
         theme: ThemeData(
+          appBarTheme: AppBarTheme(backgroundColor: AppColors.primary),
           scaffoldBackgroundColor: AppColors.background,
           textTheme: const TextTheme(
             bodyLarge: TextStyle(color: AppColors.text),
@@ -91,7 +82,7 @@ class MainScaffold extends StatefulWidget {
 class _MainScaffoldState extends State<MainScaffold> {
   int _selectedIndex = 0;
 
-  final List<String> _routes = ['/', '/category', '/transaction', '/profile'];
+  final List<String> _routes = ['/', '/product', '/transaction', '/profile'];
 
   void _onItemTapped(int index) {
     setState(() => _selectedIndex = index);

@@ -2,88 +2,61 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pg_pritani/theme/app_colors.dart';
 
-class RiceCard extends StatelessWidget {
-  const RiceCard({super.key});
+class ProductCard extends StatelessWidget {
+  final String image;
+  final String title;
+  final String subTitle;
+  final VoidCallback? onTap;
+
+  const ProductCard({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.subTitle,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: onTap,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16.r),
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16.r),
           color: AppColors.primary,
+          borderRadius: BorderRadius.circular(16.r),
         ),
-        child: Column(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  margin: EdgeInsets.all(10.r),
-                  height: 100.h,
-                  width: 100.w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16.r),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/1.jpg'),
-                      fit: BoxFit.cover,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 30.sp,
                     ),
                   ),
-                ),
-                SizedBox(width: 10.w),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    alignment: Alignment.topLeft,
-                    margin: EdgeInsets.symmetric(vertical: 10.h),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Beras Ketan',
-                          style: TextStyle(
-                            fontSize: 25.sp,
-                            fontWeight: FontWeight.w600,
-                            height: 1.0,
-                          ),
-                        ),
-                        SizedBox(height: 5.h),
-                        Text(
-                          'Stok :',
-                          style: TextStyle(
-                            fontSize: 15.sp,
-                            color: Colors.grey[300],
-                          ),
-                        ),
-                        SizedBox(height: 10.h),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
-                            vertical: 5.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.yellow[500],
-                            borderRadius: BorderRadius.circular(5.r),
-                          ),
-                          child: Text(
-                            'Tersedia',
-                            style: TextStyle(
-                              fontSize: 15.sp,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                  Text(
+                    subTitle,
+                    style: TextStyle(color: Colors.grey[100], fontSize: 18.sp),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-            Row(
-              children: [
-                // TODO: add button
-              ],
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12.r),
+              child: Image.asset(
+                image,
+                width: 150.w,
+                height: 100.h,
+                fit: BoxFit.fill,
+              ),
             ),
           ],
         ),
