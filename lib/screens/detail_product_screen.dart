@@ -8,12 +8,10 @@ class DetailProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Detail Produk'),
-      ),
+      appBar: AppBar(title: const Text('Detail Produk')),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          padding: EdgeInsets.all(16.r),
           child: DetailProductCard(),
         ),
       ),
