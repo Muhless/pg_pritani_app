@@ -50,23 +50,29 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
-      child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        // ubah warna bg
-        theme: ThemeData(
-          appBarTheme: AppBarTheme(backgroundColor: AppColors.primary),
-          scaffoldBackgroundColor: AppColors.background,
-          textTheme: const TextTheme(
-            bodyLarge: TextStyle(color: AppColors.text),
-            bodyMedium: TextStyle(color: AppColors.text),
-            bodySmall: TextStyle(color: AppColors.text),
-            titleLarge: TextStyle(color: AppColors.text),
-            titleMedium: TextStyle(color: AppColors.text),
-            titleSmall: TextStyle(color: AppColors.text),
+      builder: (context, child) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          // ubah warna bg
+          theme: ThemeData(
+            appBarTheme: AppBarTheme(
+              backgroundColor: AppColors.primary,
+              titleTextStyle: TextStyle(color: AppColors.text, fontSize: 20.sp),
+            ),
+            iconTheme: IconThemeData(color: AppColors.text),
+            scaffoldBackgroundColor: AppColors.background,
+            textTheme: const TextTheme(
+              bodyLarge: TextStyle(color: AppColors.text),
+              bodyMedium: TextStyle(color: AppColors.text),
+              bodySmall: TextStyle(color: AppColors.text),
+              titleLarge: TextStyle(color: AppColors.text),
+              titleMedium: TextStyle(color: AppColors.text),
+              titleSmall: TextStyle(color: AppColors.text),
+            ),
           ),
-        ),
-        routerConfig: _router,
-      ),
+          routerConfig: _router,
+        );
+      },
     );
   }
 }

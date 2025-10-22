@@ -1,6 +1,7 @@
 import 'package:faker/faker.dart' hide Image;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pg_pritani/theme/app_colors.dart';
 
 class DetailProductCard extends StatelessWidget {
   const DetailProductCard({super.key});
@@ -17,9 +18,13 @@ class DetailProductCard extends StatelessWidget {
           SizedBox(height: 5.h),
           Center(
             child: Text(
-              'Nama Produk',
+              'Beras Pandan Wangi Premium',
               style: TextStyle(fontSize: 25.sp, fontWeight: FontWeight.bold),
             ),
+          ),
+          SizedBox(height: 5.h),
+          Center(
+            child: Text('Rp 15.000', style: TextStyle(fontSize: 20.sp)),
           ),
           SizedBox(height: 5.h),
           Text(
@@ -30,6 +35,35 @@ class DetailProductCard extends StatelessWidget {
           Text(
             faker.lorem.sentences(3).join(' '),
             style: TextStyle(fontSize: 14.sp, height: 1.4.h),
+          ),
+          Spacer(),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 15.h),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.primary,
+                minimumSize: Size(double.infinity, 50.h),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.r),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.local_grocery_store,
+                    color: AppColors.text,
+                    size: 20.sp,
+                  ),
+                  SizedBox(width: 10.w),
+                  Text(
+                    'Tambah Ke Keranjang',
+                    style: TextStyle(color: AppColors.text, fontSize: 15.sp),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
