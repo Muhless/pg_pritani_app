@@ -2,6 +2,7 @@ import 'package:faker/faker.dart' hide Image;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pg_pritani/theme/app_colors.dart';
+import 'package:pg_pritani/widgets/info/rating_product.dart';
 
 class DetailProductCard extends StatelessWidget {
   const DetailProductCard({super.key});
@@ -14,8 +15,13 @@ class DetailProductCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset('assets/images/rice.png'),
-          SizedBox(height: 5.h),
+          Image.asset(
+            'assets/images/bran.png',
+            width: double.infinity,
+            height: 180.h,
+            fit: BoxFit.cover,
+          ),
+          SizedBox(height: 10.h),
           Center(
             child: Text(
               'Beras Pandan Wangi Premium',
@@ -23,6 +29,9 @@ class DetailProductCard extends StatelessWidget {
             ),
           ),
           SizedBox(height: 5.h),
+          RatingProduct(),
+          SizedBox(height: 5.h),
+
           Center(
             child: Text(
               'Rp 15.000 / Kg',
@@ -39,31 +48,27 @@ class DetailProductCard extends StatelessWidget {
             faker.lorem.sentences(3).join(' '),
             style: TextStyle(fontSize: 14.sp, height: 1.4.h),
           ),
-          Spacer(),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primary,
-              minimumSize: Size(double.infinity, 50.h),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.r),
+          SizedBox(height: 10.h),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Total Stok Tersedia',
+                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
               ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.local_grocery_store,
-                  color: AppColors.text,
-                  size: 20.sp,
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+                decoration: BoxDecoration(
+                  color: AppColors.secondary,
+                  borderRadius: BorderRadius.circular(10.r),
                 ),
-                SizedBox(width: 10.w),
-                Text(
-                  'Tambah Ke Keranjang',
-                  style: TextStyle(color: AppColors.text, fontSize: 15.sp),
+                child: Text(
+                  '140 Kg',
+                  style: TextStyle(color: Colors.white, fontSize: 18.sp),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),

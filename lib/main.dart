@@ -8,7 +8,7 @@ import 'package:pg_pritani/screens/product_screen.dart';
 import 'package:pg_pritani/screens/profile_screen.dart';
 import 'package:pg_pritani/screens/transaction_screen.dart';
 import 'package:pg_pritani/theme/app_colors.dart';
-import 'package:pg_pritani/widgets/custom_bottom_bar.dart';
+import 'package:pg_pritani/widgets/layout/custom_bottom_bar.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(

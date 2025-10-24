@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pg_pritani/theme/app_colors.dart';
-import 'package:pg_pritani/widgets/price_info.dart';
+import 'package:pg_pritani/widgets/info/price_info.dart';
 
 class PriceTodayCard extends StatelessWidget {
   const PriceTodayCard({super.key});
@@ -22,6 +22,8 @@ class PriceTodayCard extends StatelessWidget {
             style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 10.h),
+          PriceInfo(),
+          SizedBox(height: 5.h),
           PriceInfo(),
           SizedBox(height: 5.h),
           PriceInfo(),

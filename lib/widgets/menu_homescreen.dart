@@ -3,7 +3,7 @@ import 'package:pg_pritani/screens/contact_screen.dart';
 import 'package:pg_pritani/screens/history_screen.dart';
 import 'package:pg_pritani/screens/product_screen.dart';
 import 'package:pg_pritani/screens/transaction_screen.dart';
-import 'package:pg_pritani/widgets/menu_card.dart';
+import 'package:pg_pritani/widgets/cards/menu_card.dart';
 
 class MenuHomescreen extends StatelessWidget {
   const MenuHomescreen({super.key});

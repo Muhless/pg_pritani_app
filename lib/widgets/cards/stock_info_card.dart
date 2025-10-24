@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pg_pritani/theme/app_colors.dart';
-import 'package:pg_pritani/widgets/stock_row.dart';
+import 'package:pg_pritani/widgets/info/stock_row.dart';
 
 class StockInfoCard extends StatelessWidget {
   const StockInfoCard({super.key});

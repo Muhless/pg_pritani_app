@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pg_pritani/widgets/cards/product_card.dart';
 import 'package:pg_pritani/widgets/cards/stock_info_card.dart';
-import 'package:pg_pritani/widgets/search_field.dart';
+import 'package:pg_pritani/widgets/input/search_field.dart';
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
