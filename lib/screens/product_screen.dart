@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pg_pritani/widgets/cards/product_card.dart';
+import 'package:pg_pritani/widgets/cards/stock_info_card.dart';
 import 'package:pg_pritani/widgets/search_field.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -93,8 +94,10 @@ class ProductScreen extends StatelessWidget {
           padding: EdgeInsets.all(16.w),
           child: Column(
             children: [
-              SearchField(),
+              StockInfoCard(),
               SizedBox(height: 10.h),
+              SearchField(),
+              SizedBox(height: 20.h),
               Expanded(
                 child: ListView.separated(
                   itemCount: products.length,

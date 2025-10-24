@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pg_pritani/theme/app_colors.dart';
-import 'package:pg_pritani/widgets/stockRow.dart';
+import 'package:pg_pritani/widgets/stock_row.dart';
 
 class StockInfoCard extends StatelessWidget {
   const StockInfoCard({super.key});
@@ -13,7 +13,7 @@ class StockInfoCard extends StatelessWidget {
       padding: EdgeInsets.all(10.r),
       decoration: BoxDecoration(
         color: AppColors.secondary,
-        borderRadius: BorderRadius.circular(10.r),
+        borderRadius: BorderRadius.circular(16.r),
       ),
       child: Column(
         children: [

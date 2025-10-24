@@ -25,11 +25,18 @@ class CustomBottomBar extends StatelessWidget {
       elevation: 10,
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.search), label: "Cari"),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.shopping_bag),
+          label: "Produk",
+        ),
         BottomNavigationBarItem(
           icon: Icon(Icons.shopping_cart),
-          label: "Transaksi",
+          label: "Keranjang",
         ),
+        // BottomNavigationBarItem(
+        //   icon: Icon(Icons.local_shipping),
+        //   label: "Pesanan Saya",
+        // ),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: "Akun"),
       ],
     );

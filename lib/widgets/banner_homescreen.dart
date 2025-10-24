@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pg_pritani/screens/transaction_screen.dart';
+import 'package:pg_pritani/screens/product_screen.dart';
 import 'package:pg_pritani/theme/app_colors.dart';
 
 class HomescreenBanner extends StatelessWidget {
@@ -49,7 +49,7 @@ class HomescreenBanner extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => TransactionScreen(),
+                          builder: (context) => ProductScreen(),
                         ),
                       );
                     },
