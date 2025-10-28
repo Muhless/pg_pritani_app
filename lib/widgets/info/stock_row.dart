@@ -30,12 +30,19 @@ class Stockrow extends StatelessWidget {
             children: [
               Icon(icon, size: 20.sp, color: Colors.white),
               SizedBox(width: 4.h),
-              Text(label, style: TextStyle(fontSize: 14.sp)),
+              Text(
+                label,
+                style: TextStyle(fontSize: 14.sp, color: Colors.white),
+              ),
             ],
           ),
           Text(
             value,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp),
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 14.sp,
+            ),
           ),
         ],
       ),

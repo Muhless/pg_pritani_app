@@ -19,7 +19,11 @@ class PriceTodayCard extends StatelessWidget {
         children: [
           Text(
             'Harga Hari Ini',
-            style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.sp,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           SizedBox(height: 10.h),
           PriceInfo(),

@@ -19,7 +19,11 @@ class StockInfoCard extends StatelessWidget {
         children: [
           Text(
             'Info stock',
-            style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 18.sp,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           SizedBox(height: 10.sp),
           // TODO: use api

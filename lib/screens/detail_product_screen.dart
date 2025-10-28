@@ -27,9 +27,6 @@ class DetailProductScreen extends StatelessWidget {
 
               ReviewProduct(),
               SizedBox(height: 10.h),
-              ReviewProduct(),
-              SizedBox(height: 10.h),
-              ReviewProduct(),
             ],
           ),
         ),

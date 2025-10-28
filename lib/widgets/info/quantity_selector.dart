@@ -12,23 +12,30 @@ class QuantitySelector extends StatefulWidget {
 }
 
 class _QuantitySelectodrState extends State<QuantitySelector> {
-  late int quantity;
-
-  @override
-  void initState() {
-    super.initState();
-    quantity = widget.initialValue;
-  }
+  final TextEditingController _controller = TextEditingController(text: '1');
 
   void increase() {
-    setState(() => quantity++);
-    widget.onChanged?.call(quantity);
+    int current = int.tryParse(_controller.text) ?? 1;
+    setState(() {
+      _controller.text = (current + 1).toString();
+    });
   }
 
   void decrease() {
-    if (quantity > 1) {
-      setState(() => quantity--);
-      widget.onChanged?.call(quantity);
+    int current = int.tryParse(_controller.text) ?? 1;
+    if (current > 1) {
+      setState(() {
+        _controller.text = (current - 1).toString();
+      });
+    }
+  }
+
+  void validateInput() {
+    int current = int.tryParse(_controller.text) ?? 1;
+    if (current > 1) {
+      setState(() {
+        _controller.text = (current - 1).toString();
+      });
     }
   }
 
@@ -37,21 +44,37 @@ class _QuantitySelectodrState extends State<QuantitySelector> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Rp 150.000', style: TextStyle(fontSize: 18.sp)),
+        Text('Rp 150.000', style: TextStyle(fontSize: 17.sp)),
         Row(
           children: [
             IconButton(onPressed: decrease, icon: const Icon(Icons.remove)),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(8.r),
-              ),
-              child: Text(
-                '$quantity',
-                style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+            SizedBox(
+              width: 50.w,
+              child: TextField(
+                controller: _controller,
+                textAlign: TextAlign.center,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(vertical: 8.h),
+                  isDense: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                ),
+                onEditingComplete: validateInput,
+                // INI MEMBUAT ANGKA AWAL '1'
+                // onChanged: (value) {
+                //   if (value.isEmpty ||
+                //       int.tryParse(value) == null ||
+                //       int.parse(value) < 1) {
+                //     _controller.text = '1';
+                //   }
+                // },
               ),
             ),
+            SizedBox(width: 4.w),
+            Text(' Kg', style: TextStyle(fontSize: 14.sp)),
+
             IconButton(icon: const Icon(Icons.add), onPressed: increase),
           ],
         ),

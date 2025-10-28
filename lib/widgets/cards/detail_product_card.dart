@@ -55,7 +55,7 @@ class DetailProductCard extends StatelessWidget {
             children: [
               Text(
                 'Total Stok Tersedia',
-                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
@@ -65,7 +65,7 @@ class DetailProductCard extends StatelessWidget {
                 ),
                 child: Text(
                   '140 Kg',
-                  style: TextStyle(color: Colors.white, fontSize: 18.sp),
+                  style: TextStyle(color: Colors.white, fontSize: 15.sp),
                 ),
               ),
             ],
