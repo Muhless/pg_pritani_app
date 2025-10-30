@@ -54,7 +54,7 @@ class DetailProductCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Total Stok Tersedia',
+                'Stok',
                 style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
               ),
               Container(

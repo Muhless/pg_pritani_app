@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pg_pritani/screens/cart_screen.dart';
 import 'package:pg_pritani/screens/contact_screen.dart';
 import 'package:pg_pritani/screens/history_screen.dart';
 import 'package:pg_pritani/screens/product_screen.dart';
-import 'package:pg_pritani/screens/transaction_screen.dart';
 import 'package:pg_pritani/widgets/cards/menu_card.dart';
 
 class MenuHomescreen extends StatelessWidget {
@@ -34,7 +34,7 @@ class MenuHomescreen extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => TransactionScreen()),
+              MaterialPageRoute(builder: (context) => CartScreen()),
             );
           },
         ),

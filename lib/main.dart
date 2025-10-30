@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pg_pritani/screens/cart_screen.dart';
 import 'package:pg_pritani/screens/detail_product_screen.dart';
 import 'package:pg_pritani/screens/home_screen.dart';
 import 'package:pg_pritani/screens/product_screen.dart';
 import 'package:pg_pritani/screens/profile_screen.dart';
-import 'package:pg_pritani/screens/transaction_screen.dart';
 import 'package:pg_pritani/theme/app_colors.dart';
 import 'package:pg_pritani/widgets/layout/custom_bottom_bar.dart';
 
@@ -42,8 +42,8 @@ class MyApp extends StatelessWidget {
           ),
 
           GoRoute(
-            path: '/transaction',
-            builder: (context, state) => const TransactionScreen(),
+            path: '/cart',
+            builder: (context, state) => const CartScreen(),
           ),
           GoRoute(
             path: '/profile',
@@ -97,7 +97,7 @@ class MainScaffold extends StatefulWidget {
 class _MainScaffoldState extends State<MainScaffold> {
   int _selectedIndex = 0;
 
-  final List<String> _routes = ['/', '/product', '/transaction', '/profile'];
+  final List<String> _routes = ['/', '/product', '/cart', '/profile'];
 
   void _onItemTapped(int index) {
     setState(() => _selectedIndex = index);
